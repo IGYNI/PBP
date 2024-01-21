@@ -30,7 +30,7 @@ public class GlobalSituation : MonoBehaviour
 
     public void Change_GameStage (int stage)//1 - 6 сцены, 0 перебивка
     {
-        Show_Countdown_Laugh(0.0001f, 100000);
+        //Show_Countdown_Laugh(0.0001f, 100000);
         if (stage != 0) TV_Screen.SetActive(true);
 
         switch(stage)
