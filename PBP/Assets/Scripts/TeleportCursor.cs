@@ -10,7 +10,7 @@ public class TeleportCursor : MonoBehaviour
 
 
 
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Labyrinth"))
         {
@@ -18,7 +18,7 @@ public class TeleportCursor : MonoBehaviour
         }
         else
         {
-            
+            Debug.Log("Victory");
         }
     }
 
