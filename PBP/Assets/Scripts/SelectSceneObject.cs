@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 
 public class SelectSceneObject : MonoBehaviour
 {
+    public static event Action<bool> OnCurrentGoodChoice;
     enum Choices
     {
         good—hoice = 0,
@@ -41,13 +43,14 @@ public class SelectSceneObject : MonoBehaviour
             currentChoice = Choices.good—hoice;
             goodOutline.OutlineWidth = 2;
             badOutline.OutlineWidth = 0;
+            OnCurrentGoodChoice.Invoke(true);
         }
         else if( choice == 1) 
         {
             currentChoice = Choices.badChoice;
             goodOutline.OutlineWidth = 0;
             badOutline.OutlineWidth = 2;
+            OnCurrentGoodChoice.Invoke(false);
         }
     }
-
 }
