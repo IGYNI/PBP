@@ -3059,7 +3059,7 @@ GameObject:
   - component: {fileID: 880155585}
   - component: {fileID: 880155588}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Presenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3168,6 +3168,9 @@ MonoBehaviour:
   startPoint: {fileID: 222555044}
   endPoint: {fileID: 559902810}
   speed: 1
+  screenTextPrefab: {fileID: 8648137300786981475, guid: 70cf37e694bcab049902d24ed4aa1607,
+    type: 3}
+  isMove: 0
 --- !u!1 &931797563
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,15 +5,25 @@ public class PresenterController : MonoBehaviour
     [SerializeField] Transform startPoint;
     [SerializeField] Transform endPoint;
     [SerializeField] float speed = 2f;
-    private bool isMove = false;
+    [SerializeField] GameObject screenTextPrefab;
+
+    [SerializeField] bool isMove = false;
 
     private float t; // для зберігання значення інтерполяції
+    private float lastSpawnTime;
+    private float spawnRate = 3f;
+    private string[] textsToScreen = { "No please!", "What do you do?", "Nooo!", "Oh no!", "I can't belive it!", "Oh, come on!", "Help me!" };
 
     void Update()
     {
         if (isMove)
         {
             MovePresenter();
+            if (Time.time > lastSpawnTime + spawnRate)
+            {
+                ShowText();
+                lastSpawnTime = Time.time;
+            }
         }
     }
 
@@ -27,6 +37,15 @@ public class PresenterController : MonoBehaviour
     private void IsMove(bool move) 
     { 
         isMove = move;
+    }
+
+    private void ShowText()
+    {
+        if (screenTextPrefab)
+        {
+            GameObject prefabText = Instantiate(screenTextPrefab, transform.position + new Vector3(0f, 0.4f, 0f), Quaternion.identity);
+            prefabText.GetComponentInChildren<TextMesh>().text = textsToScreen[Random.Range(0, textsToScreen.Length)];
+        }
     }
 
     private void OnEnable()
