@@ -35,7 +35,10 @@ public class Camera_Select_ThroughScreen : MonoBehaviour
             _curentSelect = CurentSelect.Pill_One; // Выбраная пилюля один
             Pill_One.OutlineWidth = 2; // Выделение пилюли
             Pill_Two.OutlineWidth = 0; // Отвыделение пилюли
-            _selectSceneObject.SetCurrentChoice(0);
+            if (_selectSceneObject != null )
+            {
+                _selectSceneObject.SetCurrentChoice(0);
+            }
         }
 
         if(_camera.pixelWidth / 2 < _mousePos.x)// Если позиция мышки по координате x правее от центра экрана 
@@ -43,7 +46,10 @@ public class Camera_Select_ThroughScreen : MonoBehaviour
             _curentSelect = CurentSelect.Pill_Two;// Выбраная пилюля два
             Pill_One.OutlineWidth = 0; // Выделение пилюли
             Pill_Two.OutlineWidth = 2; // Отвыделение пилюли
-            _selectSceneObject.SetCurrentChoice(1);
+            if (_selectSceneObject != null)
+            {
+                _selectSceneObject.SetCurrentChoice(1);
+            }
         }
 
         if(Input.GetMouseButtonDown(0))

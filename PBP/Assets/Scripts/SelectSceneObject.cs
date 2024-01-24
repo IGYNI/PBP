@@ -43,14 +43,21 @@ public class SelectSceneObject : MonoBehaviour
             currentChoice = Choices.good—hoice;
             goodOutline.OutlineWidth = 2;
             badOutline.OutlineWidth = 0;
-            OnCurrentGoodChoice.Invoke(true);
+            if (OnCurrentGoodChoice != null)
+            {
+                OnCurrentGoodChoice.Invoke(true);
+            }
+            
         }
         else if( choice == 1) 
         {
             currentChoice = Choices.badChoice;
             goodOutline.OutlineWidth = 0;
             badOutline.OutlineWidth = 2;
-            OnCurrentGoodChoice.Invoke(false);
+            if (OnCurrentGoodChoice != null)
+            {
+                OnCurrentGoodChoice.Invoke(false);
+            }
         }
     }
 }
