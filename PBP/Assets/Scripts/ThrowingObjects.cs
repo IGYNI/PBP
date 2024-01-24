@@ -12,7 +12,7 @@ public class ThrowingObjects : MonoBehaviour
     private Quaternion startRotationCamera;
     private Vector3 endPositionCamera = new Vector3(48f, 20.72f, 17.66f);
     private Quaternion endRotationCamera = Quaternion.Euler(57.9f, -86.25f, 90f);
-
+    private Rigidbody cameraRigitbody;
     private int currentIndex = 0;
 
     private void Start()
@@ -20,6 +20,10 @@ public class ThrowingObjects : MonoBehaviour
         startPositionCamera = ScreenCamera.transform.position;
         startRotationCamera = ScreenCamera.transform.rotation;
         
+        cameraRigitbody = ScreenCamera.AddComponent<Rigidbody>();
+        cameraRigitbody.useGravity = true;
+        cameraRigitbody.isKinematic = true;
+
         ScreenCamera.transform.SetPositionAndRotation(endPositionCamera, endRotationCamera);
     }
 
@@ -41,28 +45,33 @@ public class ThrowingObjects : MonoBehaviour
         }
         else
         {
-            StartCoroutine(MoveCameraToWell());
+            cameraRigitbody.isKinematic = false;
+            cameraRigitbody.AddForce(new Vector3(-300, 0, -50));
+            Invoke("ResetCameraPosition", 2f);
+            
+            //StartCoroutine(MoveCameraToWell());
         }
     }
 
-    private IEnumerator MoveCameraToWell()
-    {
-        float elapsedTime = 0f;
-        float moveTime = 1f; // час, протягом якого камера повинна рухатися
+    //private IEnumerator MoveCameraToWell()
+    //{
+    //    float elapsedTime = 0f;
+    //    float moveTime = 1f; // час, протягом якого камера повинна рухатися
 
-        while (elapsedTime < moveTime)
-        {
-            ScreenCamera.transform.position = Vector3.Lerp(endPositionCamera, well.transform.position, elapsedTime / moveTime);
+    //    while (elapsedTime < moveTime)
+    //    {
+    //        ScreenCamera.transform.position = Vector3.Lerp(endPositionCamera, well.transform.position, elapsedTime / moveTime);
 
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-        Invoke("ResetCameraPosition", 1f);
-    }
+    //        elapsedTime += Time.deltaTime;
+    //        yield return null;
+    //    }
+    //    Invoke("ResetCameraPosition", 1f);
+    //}
 
     private void ResetCameraPosition()
     {
         ScreenCamera.transform.position = startPositionCamera;
         ScreenCamera.transform.rotation = startRotationCamera;
+        cameraRigitbody.isKinematic = true;
     }
 }
