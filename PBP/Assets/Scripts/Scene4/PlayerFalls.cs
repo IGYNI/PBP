@@ -2,9 +2,6 @@ using UnityEngine;
 
 public class PlayerFalls : MonoBehaviour
 {
-    
-
-    [SerializeField] private float lengthOfFall;
     [SerializeField] private float speedOfFall;
 
     public GameObject player;
