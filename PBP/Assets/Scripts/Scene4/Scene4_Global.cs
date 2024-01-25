@@ -13,6 +13,7 @@ public class Scene4_Global : MonoBehaviour
   public float Progress_Speed_Fall;
   public float AddValue;
   public float Progress_Fall;
+  public GameObject[] Buttons;
 
   public void Start()
   {
@@ -37,7 +38,13 @@ public class Scene4_Global : MonoBehaviour
     
       if(Progress_Fall <= 0)
       {
-      Debug.Log("Тут конец без смеха");
+      Debug.Log("Тут конец со смехом");
+      }
+
+
+      if ((Global_TimeFor_Scene_timer -= Time.deltaTime) <= 0)
+      {
+        Debug.Log("Тут конец без смеха");
       }
 
   }
