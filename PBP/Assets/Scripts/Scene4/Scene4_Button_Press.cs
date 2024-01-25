@@ -8,7 +8,7 @@ public class Scene4_Button_Press : MonoBehaviour
     {
       if(Input.GetKey(Letter))
       {
-        Debug.Log("нажал");
+        Camera.main.GetComponent<Scene4_Global>().IsPressed();
       }
 
     }
