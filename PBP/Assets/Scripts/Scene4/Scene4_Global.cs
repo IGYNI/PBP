@@ -7,7 +7,7 @@ public class Scene4_Global : MonoBehaviour
   private float Progress_Speed_Fall_timer; 
   private float Global_TimeFor_Scene_timer;
 
-
+  public float Buttons_timer;
   public float Global_TimeFor_Scene;
   public float SubValue;
   public float Progress_Speed_Fall;
@@ -17,6 +17,8 @@ public class Scene4_Global : MonoBehaviour
 
   public void Start()
   {
+    Buttons[Amount_OfButtons].SetActive(true);
+    Amount_OfButtons++;
     Progress_Speed_Fall_timer = Progress_Speed_Fall;
   }
 
@@ -47,6 +49,13 @@ public class Scene4_Global : MonoBehaviour
         Debug.Log("Тут конец без смеха");
       }
 
+      if((Buttons_timer -= Time.deltaTime) <= 0)
+      {
+        Buttons[Amount_OfButtons].SetActive(true);
+        Amount_OfButtons++;
+      }
+
+      
   }
 
 
