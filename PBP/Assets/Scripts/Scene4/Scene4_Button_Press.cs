@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Scene4_Button_Press
+public class Scene4_Button_Press : MonoBehaviour
 {
   public string Letter;
   
