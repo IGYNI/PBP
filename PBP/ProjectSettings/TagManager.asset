@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Labyrinth
   - VictoryZone
+  - Ball
   layers:
   - Default
   - TransparentFX

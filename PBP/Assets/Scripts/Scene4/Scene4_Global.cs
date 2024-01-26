@@ -3,7 +3,7 @@ using UnityEngine;
 public class Scene4_Global : MonoBehaviour
 {
 
-  private float Amount_OfButtons;
+  [SerializeField] private int Amount_OfButtons;
   private float Progress_Speed_Fall_timer; 
   private float Global_TimeFor_Scene_timer;
 
