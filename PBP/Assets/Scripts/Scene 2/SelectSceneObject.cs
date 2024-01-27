@@ -6,7 +6,7 @@ public class SelectSceneObject : MonoBehaviour
     public static event Action<bool> OnCurrentGoodChoice;
     enum Choices
     {
-        good—hoice = 0,
+        goodchoice = 0,
         badChoice = 1
     }
     public Outline goodOutline;
@@ -26,21 +26,16 @@ public class SelectSceneObject : MonoBehaviour
             if (currentChoice == 0)
             {
                 globalSituation.Global_Countdown_Laugh++;
-                globalSituation.AmountOfGoneStages++;
-                globalSituation.Next_GameStage();
+                
             }
-            else
-            {
-                globalSituation.AmountOfGoneStages++;
-                globalSituation.Next_GameStage();
-            }
+            //Camera.main.GetComponent<GlobalSituation>().Next_GameStage();
         }
     }
     public void SetCurrentChoice(int choice)
     {
         if( choice == 0)
         {
-            currentChoice = Choices.good—hoice;
+            currentChoice = Choices.goodchoice;
             goodOutline.OutlineWidth = 2;
             badOutline.OutlineWidth = 0;
             if (OnCurrentGoodChoice != null)

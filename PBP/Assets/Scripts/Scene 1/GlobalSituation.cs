@@ -18,7 +18,7 @@ public class GlobalSituation : MonoBehaviour
 
     }
 
-    [SerializeField] private GameStage _currentGameStage;
+    public GameStage _currentGameStage;
     public int Global_Countdown_Laugh;
     public int AmountOfGoneStages;
     public GameObject[] Scenes;
@@ -28,6 +28,10 @@ public class GlobalSituation : MonoBehaviour
     public Text Global_Countdown_Laugh_text;
 
 
+    private void Start() 
+    {
+        Change_GameStage(1);
+    }
     public void Change_GameStage (int stage)//1 - 6 сцены, 0 перебивка
     {
         //Show_Countdown_Laugh(0.0001f, 100000);
@@ -41,6 +45,7 @@ public class GlobalSituation : MonoBehaviour
                 break;
             case 1:
                 _currentGameStage = GameStage.Scene1;
+                Camera.main.GetComponent<Camera_Select_ThroughScreen>().enabled = true;
                 break;
             case 2:
                 _currentGameStage = GameStage.Scene2;
@@ -62,14 +67,16 @@ public class GlobalSituation : MonoBehaviour
 
         foreach (var Scene in Scenes)
                 {
+                    //Debug.Log(Scene);
                     Scene.SetActive(false);
                 }
         Scenes[stage].SetActive(true);
+        Debug.Log(stage);
     }
 
     public void Next_GameStage()
     {
-        Change_GameStage(AmountOfGoneStages++);
+        Change_GameStage(AmountOfGoneStages + 1);
     }
 
     //public void Show_Countdown_Laugh(float speed, float duration) позже доделаю либо допилю

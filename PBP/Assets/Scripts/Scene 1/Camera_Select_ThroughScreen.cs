@@ -23,6 +23,7 @@ public class Camera_Select_ThroughScreen : MonoBehaviour
     void Start()
     {
         _camera = Camera.main; // Мейн камера это _camera
+         
     }
 
     void Update()
