@@ -19,12 +19,10 @@ public class Camera_Select_ThroughScreen : MonoBehaviour
 
     [SerializeField] private CurentSelect _curentSelect; 
     public GlobalSituation Global;
-    private SelectSceneObject _selectSceneObject;
 
     void Start()
     {
         _camera = Camera.main; // Мейн камера это _camera
-        _selectSceneObject = FindObjectOfType<SelectSceneObject>();
     }
 
     void Update()
@@ -35,10 +33,6 @@ public class Camera_Select_ThroughScreen : MonoBehaviour
             _curentSelect = CurentSelect.Pill_One; // Выбраная пилюля один
             Pill_One.OutlineWidth = 2; // Выделение пилюли
             Pill_Two.OutlineWidth = 0; // Отвыделение пилюли
-            if (_selectSceneObject != null )
-            {
-                _selectSceneObject.SetCurrentChoice(0);
-            }
         }
 
         if(_camera.pixelWidth / 2 < _mousePos.x)// Если позиция мышки по координате x правее от центра экрана 
@@ -46,11 +40,7 @@ public class Camera_Select_ThroughScreen : MonoBehaviour
             _curentSelect = CurentSelect.Pill_Two;// Выбраная пилюля два
             Pill_One.OutlineWidth = 0; // Выделение пилюли
             Pill_Two.OutlineWidth = 2; // Отвыделение пилюли
-            if (_selectSceneObject != null)
-            {
-                _selectSceneObject.SetCurrentChoice(1);
             }
-        }
 
         if(Input.GetMouseButtonDown(0))
         {
@@ -65,6 +55,7 @@ public class Camera_Select_ThroughScreen : MonoBehaviour
                Global.AmountOfGoneStages++;
                Global.Change_GameStage(0);  
             }
+            _camera.GetComponent<Camera_Select_ThroughScreen>().enabled = false;
         }
 
 
