@@ -14,6 +14,9 @@ public class ThrowingObjects : MonoBehaviour
     private Quaternion endRotationCamera = Quaternion.Euler(57.9f, -86.25f, 90f);
     private Rigidbody cameraRigitbody;
     private int currentIndex = 0;
+    [SerializeField] private float timer;
+    [SerializeField] private float timerr;
+    public bool yes = false;
 
     private void Start()
     {
@@ -33,6 +36,22 @@ public class ThrowingObjects : MonoBehaviour
         {
             SpawnCurrentObject();
         }
+        if((timer -= Time.deltaTime) <= 0) 
+        {
+            
+            Camera.main.GetComponent<GlobalSituation>().AmountOfGoneStages++;
+            Camera.main.GetComponent<GlobalSituation>().Change_GameStage(0); 
+        }
+        if(yes)
+        {
+            if((timerr -= Time.deltaTime) <= 0) 
+            {
+                Camera.main.GetComponent<GlobalSituation>().Global_Countdown_Laugh++;
+                Camera.main.GetComponent<GlobalSituation>().AmountOfGoneStages++;
+                Camera.main.GetComponent<GlobalSituation>().Change_GameStage(0); 
+            }
+        }
+        
     }
 
     private void SpawnCurrentObject()
@@ -48,7 +67,7 @@ public class ThrowingObjects : MonoBehaviour
             cameraRigitbody.isKinematic = false;
             cameraRigitbody.AddForce(new Vector3(-300, 0, -50));
             Invoke("ResetCameraPosition", 2f);
-            
+            yes = true;
             //StartCoroutine(MoveCameraToWell());
         }
     }
@@ -56,7 +75,7 @@ public class ThrowingObjects : MonoBehaviour
     //private IEnumerator MoveCameraToWell()
     //{
     //    float elapsedTime = 0f;
-    //    float moveTime = 1f; // час, протягом якого камера повинна рухатися
+    //    float moveTime = 1f; // пїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
     //    while (elapsedTime < moveTime)
     //    {

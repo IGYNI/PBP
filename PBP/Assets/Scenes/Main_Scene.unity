@@ -1247,6 +1247,9 @@ MonoBehaviour:
   spawnPosition: {fileID: 1369832819}
   ScreenCamera: {fileID: 1884771277}
   well: {fileID: 1659339755}
+  timer: 1800
+  timerr: 3
+  yes: 0
 --- !u!1 &263413960
 GameObject:
   m_ObjectHideFlags: 0
@@ -3200,7 +3203,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &709108388
 Transform:
   m_ObjectHideFlags: 0
