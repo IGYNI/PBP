@@ -52,6 +52,7 @@ public class GlobalSituation : MonoBehaviour
                 break;
             case 3:
                 _currentGameStage = GameStage.Scene3;
+                Camera.main.GetComponent<Camera_Control_Spine>().enabled = true;
                 break;
             case 4:
                 _currentGameStage = GameStage.Scene4;

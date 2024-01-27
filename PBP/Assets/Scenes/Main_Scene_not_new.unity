@@ -3858,10 +3858,10 @@ GameObject:
   - component: {fileID: 564146112}
   - component: {fileID: 564146105}
   - component: {fileID: 564146108}
-  - component: {fileID: 564146109}
-  - component: {fileID: 564146110}
   - component: {fileID: 564146111}
   - component: {fileID: 564146113}
+  - component: {fileID: 564146115}
+  - component: {fileID: 564146114}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3988,48 +3988,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!114 &564146109
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 564146104}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a3262b9c59adb04f825259621f6e357, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Pill_One: {fileID: 931797568}
-  Pill_Two: {fileID: 1211994606}
-  _curentSelect: 0
-  Global: {fileID: 564146110}
---- !u!114 &564146110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 564146104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee42194256e258c4db3ee6ecb4dbc7db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _currentGameStage: 0
-  Global_Countdown_Laugh: 0
-  AmountOfGoneStages: 0
-  Scenes:
-  - {fileID: 366526833}
-  - {fileID: 709108387}
-  - {fileID: 768702908}
-  - {fileID: 1449803069}
-  - {fileID: 90879912}
-  - {fileID: 2078639110}
-  - {fileID: 1328979650}
-  TV_Screen: {fileID: 653897989}
-  Parametr: {fileID: 210215523}
-  Global_Countdown_Laugh_text: {fileID: 2142035070}
 --- !u!114 &564146111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4071,6 +4029,48 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_MaxRayIntersections: 0
+--- !u!114 &564146114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564146104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47de7f05a29417848bfbab24f5fd0365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentGameStage: 0
+  Global_Countdown_Laugh: 0
+  AmountOfGoneStages: 0
+  Scenes:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  TV_Screen: {fileID: 0}
+  Parametr: {fileID: 210215523}
+  Global_Countdown_Laugh_text: {fileID: 0}
+--- !u!114 &564146115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564146104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9de45055001627a4db94cc0a97d448c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Pill_One: {fileID: 931797568}
+  Pill_Two: {fileID: 1211994606}
+  _curentSelect: 0
+  Global: {fileID: 564146114}
 --- !u!1 &566680183
 GameObject:
   m_ObjectHideFlags: 0
@@ -4751,7 +4751,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &709108388
 Transform:
   m_ObjectHideFlags: 0
@@ -9568,7 +9568,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1449803070
 Transform:
   m_ObjectHideFlags: 0
@@ -13512,7 +13512,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2078639111
 Transform:
   m_ObjectHideFlags: 0
