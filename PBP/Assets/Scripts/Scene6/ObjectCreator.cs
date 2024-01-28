@@ -14,6 +14,7 @@ public class ObjectCreator : MonoBehaviour
         {
             CreateAndMoveObject();
         }
+        
     }
 
     private void CreateAndMoveObject()

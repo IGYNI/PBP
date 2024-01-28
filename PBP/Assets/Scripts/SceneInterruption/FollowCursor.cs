@@ -12,6 +12,6 @@ public class FollowCursor : MonoBehaviour
     }
     void Update()
     {
-        gameObject.transform.position = new Vector3(Input.mousePosition.x /1000 - 1 , Input.mousePosition.y/1000 - 0.25f, curse);
+        gameObject.transform.position = new Vector3(Input.mousePosition.x /192 - 4.5f, Input.mousePosition.y/108 - 0.85f , curse);
     }
 }

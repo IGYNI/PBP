@@ -5,6 +5,7 @@ using UnityEngine;
 public class force : MonoBehaviour
 {
     private void OnEnable() {
-        //gameObject.GetComponent<Rigidbody>().AddForce(new Vector3 (-70, 90, 90));
+        gameObject.GetComponent<Rigidbody>().AddForce(new Vector3 (-80, 90, 140));
     }
+    
 }
