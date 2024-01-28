@@ -34,6 +34,7 @@ public class GlobalSituation : MonoBehaviour
     }
     public void Change_GameStage (int stage)//1 - 6 сцены, 0 перебивка
     {
+        if(stage == Scenes.Length) Debug.Log("FDSGDGGSDFGFDAS");
         //Show_Countdown_Laugh(0.0001f, 100000);
         if (stage != 0) TV_Screen.SetActive(true);
 
@@ -73,6 +74,8 @@ public class GlobalSituation : MonoBehaviour
                     Scene.SetActive(false);
                 }
         Scenes[stage].SetActive(true);
+        if(stage == 5) Scenes[5].SetActive(true);
+        Debug.Log(stage);
         Debug.Log(stage);
     }
 
