@@ -10,8 +10,8 @@ public class ThrowingObjects : MonoBehaviour
 
     private Vector3 startPositionCamera;
     private Quaternion startRotationCamera;
-    private Vector3 endPositionCamera = new Vector3(30.10f, 5f, 14);
-    private Quaternion endRotationCamera = Quaternion.Euler(f, -265.852f, 90f);
+    private Vector3 endPositionCamera = new Vector3(30.40f, 5f, 14);
+    private Quaternion endRotationCamera = Quaternion.Euler(40f, -265.852f, 90f);
     private Rigidbody cameraRigitbody;
     private int currentIndex = 0;
     [SerializeField] private float timer;
@@ -65,8 +65,8 @@ public class ThrowingObjects : MonoBehaviour
         }
         else
         {
-            cameraRigitbody.isKinematic = false;
-            cameraRigitbody.AddForce(new Vector3(-300, 0, -50));
+            cameraRigitbody.isKinematic = false;cameraRigitbody.AddForce(new Vector3(gameObject.transform.rotation.x, gameObject.transform.rotation.y, gameObject.transform.rotation.z), ForceMode.Impulse);
+            
             Invoke("ResetCameraPosition", 2f);
             yes = true;
             //StartCoroutine(MoveCameraToWell());

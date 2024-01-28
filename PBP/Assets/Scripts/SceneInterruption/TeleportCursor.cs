@@ -5,11 +5,15 @@ public class TeleportCursor : MonoBehaviour
 {
     [DllImport("user32.dll")]
     static extern bool SetCursorPos(int X, int Y);
-    public int xPos = 30;
-    public int yPos = 1000;
+    public int xPos;
+    public int yPos;
 
 
-
+    private void Start() 
+    {
+        xPos = (int) Input.mousePosition.x;
+        yPos = (int) Input.mousePosition.y;
+    }
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Labyrinth"))
