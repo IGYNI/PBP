@@ -5,8 +5,8 @@ public class FollowCursor : MonoBehaviour
 
     public float curse;
     public float cursee;
-    private Vctстой
-    private void Start() 
+    
+    void Start() 
     {
         curse =  gameObject.transform.position.z - 0.15f;
     }
