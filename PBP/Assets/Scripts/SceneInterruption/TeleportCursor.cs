@@ -5,24 +5,21 @@ public class TeleportCursor : MonoBehaviour
 {
     [DllImport("user32.dll")]
     static extern bool SetCursorPos(int X, int Y);
-    public int xPos;
-    public int yPos;
+    public Vector3 holder;
 
-
-    private void Start() 
-    {
-        xPos = (int) Input.mousePosition.x;
-        yPos = (int) Input.mousePosition.y;
+    private void Start() {
+        holder = gameObject.transform.position;
     }
+
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Labyrinth"))
         {
-            SetCursorPos(xPos, yPos);
+            gameObject.transform.position = holder;
         }
         else
         {
-            Debug.Log("Victory");
+            Camera.main.GetComponent<GlobalSituation>().Next_GameStage();
         }
     }
 

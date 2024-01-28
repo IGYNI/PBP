@@ -10,13 +10,15 @@ public class ThrowingObjects : MonoBehaviour
 
     private Vector3 startPositionCamera;
     private Quaternion startRotationCamera;
-    private Vector3 endPositionCamera = new Vector3(30.40f, 5f, 14);
+    private Vector3 endPositionCamera = new Vector3(27.90f, 7f, 14);
     private Quaternion endRotationCamera = Quaternion.Euler(40f, -265.852f, 90f);
     private Rigidbody cameraRigitbody;
     private int currentIndex = 0;
     [SerializeField] private float timer;
     [SerializeField] private float timerr;
     public bool yes = false;
+
+
 
     private void Start()
     {
@@ -41,7 +43,8 @@ public class ThrowingObjects : MonoBehaviour
         {
             
             Camera.main.GetComponent<GlobalSituation>().AmountOfGoneStages++;
-            Camera.main.GetComponent<GlobalSituation>().Change_GameStage(0); 
+            
+            Camera.main.GetComponent<GlobalSituation>().Change_GameStage(2); 
         }
         if(yes)
         {
@@ -49,7 +52,8 @@ public class ThrowingObjects : MonoBehaviour
             {
                 Camera.main.GetComponent<GlobalSituation>().Global_Countdown_Laugh++;
                 Camera.main.GetComponent<GlobalSituation>().AmountOfGoneStages++;
-                Camera.main.GetComponent<GlobalSituation>().Change_GameStage(0); 
+                Camera.main.GetComponent<GlobalSituation>().PlayLaugh();
+                Camera.main.GetComponent<GlobalSituation>().Change_GameStage(2); 
             }
         }
         
@@ -65,7 +69,8 @@ public class ThrowingObjects : MonoBehaviour
         }
         else
         {
-            cameraRigitbody.isKinematic = false;cameraRigitbody.AddForce(new Vector3(gameObject.transform.rotation.x, gameObject.transform.rotation.y, gameObject.transform.rotation.z), ForceMode.Impulse);
+            cameraRigitbody.isKinematic = false;
+            cameraRigitbody.AddForce(new Vector3(gameObject.transform.rotation.x, gameObject.transform.rotation.y, gameObject.transform.rotation.z), ForceMode.Impulse);
             
             Invoke("ResetCameraPosition", 2f);
             yes = true;

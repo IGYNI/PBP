@@ -39,16 +39,15 @@ public class Scene4_Global : MonoBehaviour
     {
       if((timer -= Time.deltaTime) <= 0)
       {
-        Debug.Log("ПИЗДА");
         Camera.main.GetComponent<GlobalSituation>().Global_Countdown_Laugh++;
+        Camera.main.GetComponent<GlobalSituation>().PlayLaugh();
         Camera.main.GetComponent<GlobalSituation>().AmountOfGoneStages++;
         Debug.Log(Camera.main.GetComponent<GlobalSituation>().AmountOfGoneStages);
         Camera.main.GetComponent<GlobalSituation>().Change_GameStage(0); 
         Camera.main.GetComponent<Scene4_Global>().enabled = false;
       }
     }
-      Debug.Log("ПИЗДА И ТОЧКА");
-      Debug.Log(Luk.rotation.x);
+
     if(Luk.rotation.x < -0.65)
     {
       
@@ -65,9 +64,8 @@ public class Scene4_Global : MonoBehaviour
 
     if ((Global_TimeFor_Scene_timer -= Time.deltaTime) <= 0)
     {
-      Debug.Log("ХУЙ");
       Camera.main.GetComponent<GlobalSituation>().AmountOfGoneStages++;
-      Debug.Log(Camera.main.GetComponent<GlobalSituation>().AmountOfGoneStages);
+      
       Camera.main.GetComponent<GlobalSituation>().Change_GameStage(0);  
       Camera.main.GetComponent<Scene4_Global>().enabled = false;
     }

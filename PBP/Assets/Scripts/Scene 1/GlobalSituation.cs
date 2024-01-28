@@ -27,6 +27,9 @@ public class GlobalSituation : MonoBehaviour
     public GameObject Parametr;
     public Text Global_Countdown_Laugh_text;
 
+    public GameObject[] Scufs;
+    public AudioClip[] audio;
+
 
 
 
@@ -44,6 +47,7 @@ public class GlobalSituation : MonoBehaviour
         switch(stage)
         {
             case 0:
+                Scufs[0].SetActive(false);
                 _currentGameStage = GameStage.Interruption;
                 TV_Screen.SetActive(false);
                 break;
@@ -66,25 +70,37 @@ public class GlobalSituation : MonoBehaviour
                 _currentGameStage = GameStage.Scene5;
                 break;
             case 6:
+                if(Global_Countdown_Laugh >= 3)
+                {
+                    GetComponent<Animation>().Play("CameraMoveEnd");
+                    Scufs[1].SetActive(true);
+                    
+                }
                 _currentGameStage = GameStage.Scene6;
                 break;
 
         }
-
+        if (stage != 6)
+        {
         foreach (var Scene in Scenes)
-                {
-                    //Debug.Log(Scene);
-                    Scene.SetActive(false);
-                }
+        {
+            //Debug.Log(Scene);
+            Scene.SetActive(false);
+        }
         Scenes[stage].SetActive(true);
         if(stage == 5) Scenes[5].SetActive(true);
-        Debug.Log(stage);
-        Debug.Log(stage);
+        }
+
     }
 
     public void Next_GameStage()
     {
         Change_GameStage(AmountOfGoneStages + 1);
+    }
+    public void PlayLaugh ()
+    {
+        GetComponent<AudioSource>().clip = audio[AmountOfGoneStages];
+        GetComponent<AudioSource>().Play();
     }
 
     //public void Show_Countdown_Laugh(float speed, float duration) позже доделаю либо допилю

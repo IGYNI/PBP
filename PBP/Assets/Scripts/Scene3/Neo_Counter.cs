@@ -16,13 +16,14 @@ public class Neo_Counter : MonoBehaviour
             Debug.Log("Смех");
             Camera.main.GetComponent<GlobalSituation>().Global_Countdown_Laugh++;
             Camera.main.GetComponent<GlobalSituation>().AmountOfGoneStages++;
+            Camera.main.GetComponent<GlobalSituation>().PlayLaugh();
             Camera.main.GetComponent<GlobalSituation>().Change_GameStage(0); 
         }
     } 
 
     public void Update()
     {
-        if ((timer += Time.deltaTime) <= 0)
+        if ((timer -= Time.deltaTime) <= 0)
         {
             Debug.Log("нихуя");
             Camera.main.GetComponent<GlobalSituation>().AmountOfGoneStages++;

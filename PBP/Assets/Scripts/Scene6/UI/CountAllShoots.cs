@@ -15,13 +15,19 @@ public class CountAllShoots : MonoBehaviour
         if (totalShootsHitValue == 20f)
         {
             Camera.main.GetComponent<GlobalSituation>().AmountOfGoneStages++;
-            Camera.main.GetComponent<GlobalSituation>().Change_GameStage(0); 
+            Camera.main.GetComponent<Transform>().Rotate(0, 180, 0);
+            Camera.main.GetComponent<GlobalSituation>().Change_GameStage(6); 
+            totalShootsHitText.text = null;
+            totalShootsText.text = null;
+
         }
         if ((totalShootsValue - totalShootsHitValue) == 20)
         {
             Camera.main.GetComponent<GlobalSituation>().Global_Countdown_Laugh++;
+            Camera.main.GetComponent<GlobalSituation>().PlayLaugh();
             Camera.main.GetComponent<GlobalSituation>().AmountOfGoneStages++;
-            Camera.main.GetComponent<GlobalSituation>().Change_GameStage(0); 
+            Camera.main.GetComponent<Transform>().Rotate(0, 180, 0);
+            Camera.main.GetComponent<GlobalSituation>().Change_GameStage(6); 
         }
 
         totalShootsHitText.text = totalShootsHitValue.ToString();
