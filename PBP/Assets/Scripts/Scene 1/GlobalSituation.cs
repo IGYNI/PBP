@@ -28,9 +28,12 @@ public class GlobalSituation : MonoBehaviour
     public Text Global_Countdown_Laugh_text;
 
 
+
+
     private void Start() 
     {
         Change_GameStage(1);
+
     }
     public void Change_GameStage (int stage)//1 - 6 сцены, 0 перебивка
     {

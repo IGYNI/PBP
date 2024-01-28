@@ -6,6 +6,6 @@ public class TEMP : MonoBehaviour
 {
     void OnEnable() 
     {
-    //Camera.main.GetComponent<GlobalSituation>().Next_GameStage();    
+        Camera.main.GetComponent<GlobalSituation>().Next_GameStage();    
     }
 }

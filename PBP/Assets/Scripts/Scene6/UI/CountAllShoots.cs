@@ -7,8 +7,8 @@ public class CountAllShoots : MonoBehaviour
     [SerializeField] private Text totalShootsHitText;
 
 
-    [HideInInspector] public int totalShootsValue;
-    [HideInInspector] public int totalShootsHitValue;
+     public int totalShootsValue;
+     public int totalShootsHitValue;
 
     void Update()
     {
