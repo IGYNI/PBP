@@ -10,8 +10,8 @@ public class ThrowingObjects : MonoBehaviour
 
     private Vector3 startPositionCamera;
     private Quaternion startRotationCamera;
-    private Vector3 endPositionCamera = new Vector3(48f, 20.72f, 17.66f);
-    private Quaternion endRotationCamera = Quaternion.Euler(57.9f, -86.25f, 90f);
+    private Vector3 endPositionCamera = new Vector3(30.10f, 5f, 14);
+    private Quaternion endRotationCamera = Quaternion.Euler(f, -265.852f, 90f);
     private Rigidbody cameraRigitbody;
     private int currentIndex = 0;
     [SerializeField] private float timer;
@@ -27,7 +27,8 @@ public class ThrowingObjects : MonoBehaviour
         cameraRigitbody.useGravity = true;
         cameraRigitbody.isKinematic = true;
 
-        ScreenCamera.transform.SetPositionAndRotation(endPositionCamera, endRotationCamera);
+        ScreenCamera.transform.position = endPositionCamera;
+        ScreenCamera.transform.rotation = endRotationCamera;
     }
 
     private void Update()

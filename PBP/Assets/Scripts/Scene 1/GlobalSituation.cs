@@ -56,6 +56,7 @@ public class GlobalSituation : MonoBehaviour
                 break;
             case 4:
                 _currentGameStage = GameStage.Scene4;
+                Camera.main.GetComponent<Scene4_Global>().enabled = true;
                 break;
             case 5:
                 _currentGameStage = GameStage.Scene5;

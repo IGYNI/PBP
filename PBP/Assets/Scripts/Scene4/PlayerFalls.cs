@@ -9,7 +9,7 @@ public class PlayerFalls : MonoBehaviour
 
     private void FixedUpdate()
     {
-        player.transform.position -= new Vector3(0, speedOfFall, 0) * Time.deltaTime;
+        player.transform.rotation = Quaternion.Euler(player.transform.rotation.x, speedOfFall, player.transform.rotation.z) /** Time.deltaTime*/;
     }
 
 }
