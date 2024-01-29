@@ -50,12 +50,12 @@ public class Camera_Select_ThroughScreen : MonoBehaviour
                 Global.Global_Countdown_Laugh++;
                 Global.PlayLaugh();
                 Global.AmountOfGoneStages++;
-                Global.Change_GameStage(0); 
+                Global.Next_GameStage(); 
             }
             else
             {
                Global.AmountOfGoneStages++;
-               Global.Change_GameStage(0);  
+               Global.Next_GameStage();
             }
             _camera.GetComponent<Camera_Select_ThroughScreen>().enabled = false;
         }

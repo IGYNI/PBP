@@ -7,7 +7,6 @@ TagManager:
   - Labyrinth
   - VictoryZone
   - Ball
-  - Orc
   layers:
   - Default
   - TransparentFX
@@ -15,7 +14,7 @@ TagManager:
   - Cockpit
   - Water
   - UI
-  - 
+  - proc
   - 
   - 
   - 

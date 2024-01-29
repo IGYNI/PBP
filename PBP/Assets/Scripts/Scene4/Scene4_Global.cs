@@ -43,7 +43,7 @@ public class Scene4_Global : MonoBehaviour
         Camera.main.GetComponent<GlobalSituation>().PlayLaugh();
         Camera.main.GetComponent<GlobalSituation>().AmountOfGoneStages++;
         Debug.Log(Camera.main.GetComponent<GlobalSituation>().AmountOfGoneStages);
-        Camera.main.GetComponent<GlobalSituation>().Change_GameStage(0); 
+        Camera.main.GetComponent<GlobalSituation>().Next_GameStage();
         Camera.main.GetComponent<Scene4_Global>().enabled = false;
       }
     }
@@ -66,7 +66,7 @@ public class Scene4_Global : MonoBehaviour
     {
       Camera.main.GetComponent<GlobalSituation>().AmountOfGoneStages++;
       
-      Camera.main.GetComponent<GlobalSituation>().Change_GameStage(0);  
+      Camera.main.GetComponent<GlobalSituation>().Next_GameStage();
       Camera.main.GetComponent<Scene4_Global>().enabled = false;
     }
     if((Buttons_timer_reaL -= Time.deltaTime) <= 0)

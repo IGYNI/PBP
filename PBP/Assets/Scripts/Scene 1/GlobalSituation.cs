@@ -47,7 +47,7 @@ public class GlobalSituation : MonoBehaviour
         switch(stage)
         {
             case 0:
-                Scufs[0].SetActive(false);
+                
                 _currentGameStage = GameStage.Interruption;
                 TV_Screen.SetActive(false);
                 break;
@@ -95,6 +95,7 @@ public class GlobalSituation : MonoBehaviour
 
     public void Next_GameStage()
     {
+        Scufs[0].SetActive(false);
         Change_GameStage(AmountOfGoneStages + 1);
     }
     public void PlayLaugh ()

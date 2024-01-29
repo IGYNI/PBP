@@ -17,17 +17,17 @@ public class Neo_Counter : MonoBehaviour
             Camera.main.GetComponent<GlobalSituation>().Global_Countdown_Laugh++;
             Camera.main.GetComponent<GlobalSituation>().AmountOfGoneStages++;
             Camera.main.GetComponent<GlobalSituation>().PlayLaugh();
-            Camera.main.GetComponent<GlobalSituation>().Change_GameStage(0); 
+            Camera.main.GetComponent<GlobalSituation>().Next_GameStage();
         }
     } 
 
     public void Update()
     {
-        if ((timer -= Time.deltaTime) <= 0)
+        if ((timer -= Time.deltaTime) >= 0)
         {
             Debug.Log("нихуя");
             Camera.main.GetComponent<GlobalSituation>().AmountOfGoneStages++;
-            Camera.main.GetComponent<GlobalSituation>().Change_GameStage(0); 
+            Camera.main.GetComponent<GlobalSituation>().Next_GameStage(); 
         }
 
     }

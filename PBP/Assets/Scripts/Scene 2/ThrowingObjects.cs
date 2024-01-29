@@ -10,7 +10,7 @@ public class ThrowingObjects : MonoBehaviour
 
     private Vector3 startPositionCamera;
     private Quaternion startRotationCamera;
-    private Vector3 endPositionCamera = new Vector3(27.90f, 7f, 14);
+    private Vector3 endPositionCamera = new Vector3(27.90f, 7f, 13.8f);
     private Quaternion endRotationCamera = Quaternion.Euler(40f, -265.852f, 90f);
     private Rigidbody cameraRigitbody;
     private int currentIndex = 0;
@@ -43,8 +43,7 @@ public class ThrowingObjects : MonoBehaviour
         {
             
             Camera.main.GetComponent<GlobalSituation>().AmountOfGoneStages++;
-            
-            Camera.main.GetComponent<GlobalSituation>().Change_GameStage(2); 
+            Camera.main.GetComponent<GlobalSituation>().Next_GameStage();
         }
         if(yes)
         {
@@ -53,7 +52,7 @@ public class ThrowingObjects : MonoBehaviour
                 Camera.main.GetComponent<GlobalSituation>().Global_Countdown_Laugh++;
                 Camera.main.GetComponent<GlobalSituation>().AmountOfGoneStages++;
                 Camera.main.GetComponent<GlobalSituation>().PlayLaugh();
-                Camera.main.GetComponent<GlobalSituation>().Change_GameStage(2); 
+                Camera.main.GetComponent<GlobalSituation>().Next_GameStage();
             }
         }
         
