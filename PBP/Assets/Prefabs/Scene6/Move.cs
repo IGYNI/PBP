@@ -7,6 +7,6 @@ public class Move : MonoBehaviour
 
     private void Update() 
     {
-        gameObject.transform.position = new Vector3(Input.mousePosition.x / 20 - 62, gameObject.transform.position.y, gameObject.transform.position.z);    
+        gameObject.transform.position = new Vector3(Input.mousePosition.x / 20 - 25, gameObject.transform.position.y, gameObject.transform.position.z);    
     }
 }

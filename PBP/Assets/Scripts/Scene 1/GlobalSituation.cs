@@ -29,6 +29,7 @@ public class GlobalSituation : MonoBehaviour
 
     public GameObject[] Scufs;
     public AudioClip[] audio;
+    public AudioClip ChangeScene;
 
 
 
@@ -40,6 +41,7 @@ public class GlobalSituation : MonoBehaviour
     }
     public void Change_GameStage (int stage)//1 - 6 сцены, 0 перебивка
     {
+        PlayChangeScene();
         if(stage == Scenes.Length) Debug.Log("FDSGDGGSDFGFDAS");
         //Show_Countdown_Laugh(0.0001f, 100000);
         if (stage != 0) TV_Screen.SetActive(true);
@@ -56,17 +58,21 @@ public class GlobalSituation : MonoBehaviour
                 Camera.main.GetComponent<Camera_Select_ThroughScreen>().enabled = true;
                 break;
             case 2:
+                PlayLaugh();
                 _currentGameStage = GameStage.Scene2;
                 break;
             case 3:
+                PlayLaugh();
                 _currentGameStage = GameStage.Scene3;
                 Camera.main.GetComponent<Camera_Control_Spine>().enabled = true;
                 break;
             case 4:
+                PlayLaugh();
                 _currentGameStage = GameStage.Scene4;
                 Camera.main.GetComponent<Scene4_Global>().enabled = true;
                 break;
             case 5:
+                PlayLaugh();
                 _currentGameStage = GameStage.Scene5;
                 break;
             case 6:
@@ -90,7 +96,7 @@ public class GlobalSituation : MonoBehaviour
         Scenes[stage].SetActive(true);
         if(stage == 5) Scenes[5].SetActive(true);
         }
-
+        
     }
 
     public void Next_GameStage()
@@ -102,6 +108,13 @@ public class GlobalSituation : MonoBehaviour
     {
         GetComponent<AudioSource>().clip = audio[AmountOfGoneStages];
         GetComponent<AudioSource>().Play();
+    }
+
+    public void PlayChangeScene()
+    {
+        GetComponent<AudioSource>().clip = ChangeScene;
+        GetComponent<AudioSource>().Play();
+
     }
 
     //public void Show_Countdown_Laugh(float speed, float duration) позже доделаю либо допилю
